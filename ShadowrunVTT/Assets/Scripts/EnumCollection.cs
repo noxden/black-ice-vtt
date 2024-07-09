@@ -1,3 +1,5 @@
+using System;
+
 public enum SkillGroup { Acting, Athletics, Biotech, CloseCombat, Conjuring, Cracking, Electronics, Enchanting, Engineering, Firearms, Influence, Outdoors, Sorcery, Stealth, Tasking }
 
 public enum Attribute { Body, Agility, Reaction, Strength, Willpower, Charisma, Logic, Intuition, Edge, Magic, Resonance }
@@ -50,3 +52,5 @@ public enum PermissionLevel { GameMaster, Player, Spectator }
 public enum BodyPart { }
 
 public enum PopupMessageType { Notification, Warning, Error }
+
+public enum COType { CompendiumObject, PlayerCharacter, NonPlayerCharacter, Buyables, Item, Equipment, Clothing, Armor, Weapon, MeleeWeapon, RangedWeapon, Modification, FirearmAccessory, Ammunition, Magazine, Credstick, SIN, Drug, Drone, Vehicle, Cyberware, Bioware, Metatype, Quirk, Action }

@@ -1,33 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SimpleJSON;
 using UnityEngine;
 
+[Serializable]
 public class CompendiumObject
 {
+    public COType coType;
     public string name;
     public SourceBook source;
-    public CompendiumTag[] tags;
+    public List<CompendiumTag> tags;
 
-    public string ToJSON()
+    public CompendiumObject()
     {
-        return JsonUtility.ToJson(new DATA_CompendiumObject(this));
+        coType = COType.CompendiumObject;
+        tags = new List<CompendiumTag>();
     }
-}
 
-[Serializable]
-public class DATA_CompendiumObject
-{
-    public string type;
-    public string name;
-    public SourceBook source;
-    public CompendiumTag[] tags;
-
-    public DATA_CompendiumObject(CompendiumObject cObject)
+    //TODO: Implement own Serializer and Deserializer for each CompendiumObject class by reading out / writing the SimpleJSON node data accordingly. 
+    public string Serialize()
     {
-        type = cObject.GetType().ToString();
-        this.name = cObject.name;
-        this.source = cObject.source;
-        this.tags = cObject.tags;
+        return JsonUtility.ToJson(this);
+    }
+
+    public static T Deserialize<T>(string jsonObject)
+    {
+        return JsonUtility.FromJson<T>(jsonObject);
     }
 }

@@ -6,4 +6,10 @@ public class Equipment : Item
 {
     public int capacity;
     public List<Modification> installedModifications;
+
+    public Equipment()
+    {
+        coType = COType.Equipment;
+        installedModifications = new List<Modification>();
+    }
 }

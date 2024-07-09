@@ -5,7 +5,7 @@ using UnityEngine;
 public class Compendium : MonoBehaviour
 {
     public static Compendium Instance { get; private set; }
-    public List<CompendiumObject> entries;
+    public static List<CompendiumObject> all;
 
     private void Awake()    // Instantiate singleton instance
     {

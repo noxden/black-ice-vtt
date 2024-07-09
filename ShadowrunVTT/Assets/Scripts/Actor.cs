@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor 
-{
-    public string name;
-    
+public class Actor : CompendiumObject
+{    
     public int GetAttributeBonus(Attribute attribute)
     {
         return 0;
